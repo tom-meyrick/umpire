@@ -18,12 +18,11 @@ class Form extends Component {
     this.setState({
       playerNames: updatedArray,
     });
-    console.log(this.state.playerNames);
   };
 
   handleClick = () => {
     const { playerNames } = this.state;
-    this.setState([...this.playerNames, { playerName: "" }]);
+    this.setState([...playerNames, { name: "" }]);
   };
 
   render() {
@@ -54,7 +53,7 @@ class Form extends Component {
           </label>
           <button
             className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-            onClick={handleClick}
+            onClick={this.handleClick}
           >
             Submit
           </button>
