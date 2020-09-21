@@ -9,19 +9,26 @@ class Form extends Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleInputChange = (e, index) => {
+    const updatedArray = [...this.state.playerNames];
+    updatedArray[index] = e.target.value;
+    this.setState({
+      playerNames: updatedArray,
+    });
+    console.log(this.state.playerNames);
+  };
+
+  handleClick = () => {
     const { playerNames } = this.state;
-    const { name, value } = e.target;
-    const list = [...playerNames];
-    list[index][name] = value;
-    this.setState({ playerNames: list });
+    this.setState([...this.playerNames, { playerName: "" }]);
   };
 
   render() {
-    const { noPlayers } = this.props;
     const { playerNames } = this.state;
+    const { noPlayers, handleClick } = this.props;
     let multiples = [];
     for (var i = 0; i < noPlayers; i++) {
       multiples.push(<div></div>);
@@ -37,14 +44,18 @@ class Form extends Component {
                   name="playerName"
                   className="form-input mt-1 block w-full"
                   type="text"
+                  data-idx={index}
                   placeholder={"Player " + (index + 1)}
                   value={index.playerName}
-                  onChange={this.handleInputChange}
+                  onChange={(e) => this.handleInputChange(e, index)}
                 />
               ))}
             </>
           </label>
-          <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+          <button
+            className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+            onClick={handleClick}
+          >
             Submit
           </button>
         </form>
