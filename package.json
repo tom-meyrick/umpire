@@ -17,14 +17,13 @@
     "tailwindcss": "^1.8.10"
   },
   "scripts": {
-    "start": "npm run watch:css && react-scripts start",
-    "build": "npm run watch:css && react-scripts build",
+    "build:tailwind": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",
+    "prestart": "npm run build:tailwind",
+    "prebuild": "npm run build:tailwind",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:styles": "postcss src/assets/tailwind.css -o src/assets/styles.css",
-    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
-    "prebuild": "npm run build:styles",
-    "prestart": "npm run build:styles"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,11 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@tailwindcss/custom-forms": "^0.2.1",
-    "autoprefixer": "^9.8.6",
-    "postcss": "^8.0.5",
-    "postcss-cli": "^7.1.2"
   }
 }

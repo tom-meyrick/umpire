@@ -5,9 +5,9 @@ export const setPlayers = (noPlayers) => {
   };
 };
 
-export const setNames = (noPlayers) => {
+export const setNames = (nameArray) => {
   return {
-    type: "UPDATE_NO",
-    noPlayers,
+    type: "UPDATE_NAMES",
+    playerNames: nameArray,
   };
 };

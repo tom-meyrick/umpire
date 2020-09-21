@@ -9,7 +9,7 @@ const mapStateToProps = ({ noPlayers }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  hand: (data) => dispatch(setNames(data)),
+  handlePlayers: (nameArray) => dispatch(setNames(nameArray)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

@@ -23,6 +23,7 @@ class Form extends Component {
   handleClick = () => {
     const { playerNames } = this.state;
     this.setState([...playerNames, { name: "" }]);
+    this.props.handlePlayers({ ...this.state });
   };
 
   render() {
