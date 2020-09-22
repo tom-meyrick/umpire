@@ -11,12 +11,19 @@ const setNames = (state, action) => ({
   playerNames: action.playerNames.playerNames,
 });
 
+const setWinners = (state, action) => ({
+  ...state,
+  winner: [...state.winner, action.winner],
+});
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "UPDATE_NO":
       return setPlayers(state, action);
     case "UPDATE_NAMES":
       return setNames(state, action);
+    case "UPDATE_WINNERS":
+      return setWinners(state, action);
     default:
       return state;
   }

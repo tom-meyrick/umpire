@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class PlayerCard extends Component {
-  render(player, key, selected, handleClick) {
+  render() {
     return (
       <div
         key={this.props.key}

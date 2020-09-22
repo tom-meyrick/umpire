@@ -12,12 +12,17 @@ class NumberInput extends Component {
   }
 
   increment() {
-    this.setState({ noPlayers: this.state.noPlayers + 2 });
+    this.setState({
+      noPlayers:
+        this.state.noPlayers < 64
+          ? this.state.noPlayers * 2
+          : this.state.noPlayers,
+    });
   }
 
   decrement() {
     this.setState({
-      noPlayers: this.state.noPlayers >= 2 ? this.state.noPlayers - 2 : 2,
+      noPlayers: this.state.noPlayers > 2 ? this.state.noPlayers / 2 : 2,
     });
   }
 
