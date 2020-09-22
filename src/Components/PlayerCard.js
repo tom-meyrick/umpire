@@ -1,25 +1,14 @@
 import React, { Component } from "react";
 
 class PlayerCard extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      // Initial state
-    };
-  }
-  handleEvent = () => {
-    this.setState({
-      // Update state
-    });
-  };
-  //Props - card colour, player name
-
-  render(player, index) {
+  render(player, key, selected, handleClick) {
     return (
       <div
         key={this.props.key}
-        className={"bg-red-400 h-64 w-64 flex justify-center"}
+        className={`bg-${
+          this.props.selected ? "blue-400" : "red-400"
+        } h-64 w-64 flex justify-center shadow-xl focus:shadow-outline`}
+        onClick={this.props.handleClick}
       >
         <p className="text-white">{this.props.player}</p>
       </div>

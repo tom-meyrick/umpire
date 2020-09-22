@@ -17,7 +17,7 @@ class NumberInput extends Component {
 
   decrement() {
     this.setState({
-      noPlayers: this.state >= 2 ? this.state.noPlayers - 2 : 2,
+      noPlayers: this.state.noPlayers >= 2 ? this.state.noPlayers - 2 : 2,
     });
   }
 
