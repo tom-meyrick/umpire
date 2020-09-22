@@ -16,14 +16,16 @@ class NumberInput extends Component {
   }
 
   decrement() {
-    this.setState({ noPlayers: this.state.noPlayers - 2 });
+    this.setState({
+      noPlayers: this.state >= 2 ? this.state.noPlayers - 2 : 2,
+    });
   }
 
   handleClick = (e) => {
     e.preventDefault();
     this.props.handleSubmit({ ...this.state });
     this.setState({
-      noPlayers: 0,
+      noPlayers: 2,
     });
   };
 
@@ -31,17 +33,36 @@ class NumberInput extends Component {
     const { handleClick, increment, decrement } = this.props;
     const { noPlayers } = this.state;
     return (
-      <div>
-        <p>{noPlayers}</p>
-        <button onClick={this.increment}>+</button>
-        <button onClick={this.decrement}>-</button>
-        <button
-          className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-          onClick={this.handleClick}
-        >
-          Submit
-        </button>
-      </div>
+      <>
+        <div className="p-2 inline-block flex justify-center m-5">
+          <div className="flex-col">
+            <div>
+              <span className="text-6xl px-10">{noPlayers}</span>
+            </div>
+            <div className="pt-8 pb-8">
+              <button
+                className="h-10 w-10 text-2xl m-4"
+                onClick={this.decrement}
+              >
+                -
+              </button>
+              <button
+                className="h-10 w-10 text-2xl m-4"
+                onClick={this.increment}
+              >
+                +
+              </button>
+            </div>
+
+            <button
+              className="m-6 block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-55"
+              onClick={this.handleClick}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </>
     );
   }
 }

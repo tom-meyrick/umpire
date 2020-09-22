@@ -1,5 +1,5 @@
 const initial = {
-  noPlayers: 0,
+  noPlayers: 2,
   playerNames: [],
 };
 

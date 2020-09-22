@@ -15,10 +15,13 @@ class PlayerCard extends Component {
   };
   //Props - card colour, player name
 
-  render() {
+  render(player, index) {
     return (
-      <div className="bg-red-600 h-64 w-64 flex justify-center">
-        <p className="text-white">Player1</p>
+      <div
+        key={this.props.key}
+        className={"bg-red-400 h-64 w-64 flex justify-center"}
+      >
+        <p className="text-white">{this.props.player}</p>
       </div>
     );
   }

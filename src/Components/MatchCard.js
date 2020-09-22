@@ -1,26 +1,17 @@
 import React, { Component } from "react";
-import PlayerCard from "../Components/PlayerCard";
+import PlayerCard from "./PlayerCard";
+import Shuffler from "./Shuffler";
 
 class MatchCard extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      // Initial state
-    };
-  }
-  handleEvent = () => {
-    this.setState({
-      // Update state
-    });
-  };
-
-  render() {
+  render(key, players) {
     return (
-      <>
-        <PlayerCard />
-        <PlayerCard />
-      </>
+      <div className="mt-4 mb-4">
+        {this.props.players.map((player, index) => (
+          <>
+            <PlayerCard key={index} player={player} />
+          </>
+        ))}
+      </div>
     );
   }
 }
