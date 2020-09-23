@@ -11,6 +11,12 @@ class NumberInput extends Component {
     this.decrement = this.decrement.bind(this);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.noPlayers !== prevState.noPlayers) {
+      this.props.handleClear();
+    }
+  }
+
   increment() {
     this.setState({
       noPlayers:

@@ -18,3 +18,16 @@ export const setWinners = (winner) => {
     winner,
   };
 };
+
+export const pushWinners = () => {
+  console.log("Hello from actions");
+  return {
+    type: "PUSH_WINNERS",
+  };
+};
+
+export const clearArray = () => {
+  return {
+    type: "CLEAR_ARRAY",
+  };
+};

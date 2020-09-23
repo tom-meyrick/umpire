@@ -16,6 +16,17 @@ const setWinners = (state, action) => ({
   winner: [...state.winner, action.winner],
 });
 
+const pushWinners = (state) => ({
+  ...state,
+  dataFlow: [...state.winner],
+});
+
+const clearArray = (state) => ({
+  ...state,
+  winner: [],
+  dataFlow: [],
+});
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "UPDATE_NO":
@@ -24,6 +35,10 @@ const reducer = (state, action) => {
       return setNames(state, action);
     case "UPDATE_WINNERS":
       return setWinners(state, action);
+    case "PUSH_WINNERS":
+      return pushWinners(state);
+    case "CLEAR_ARRAY":
+      return clearArray(state);
     default:
       return state;
   }
