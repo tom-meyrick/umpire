@@ -3,6 +3,7 @@ const initial = {
   playerNames: [],
   dataFlow: [],
   winner: [],
+  refresh: false,
 };
 
 export default initial;

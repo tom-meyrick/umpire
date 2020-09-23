@@ -2,9 +2,10 @@ import { connect } from "react-redux";
 import MatchCard from "./MatchCard";
 import { setWinners } from "../../data/actions/state";
 
-const mapStateToProps = ({ winner }) => {
+const mapStateToProps = ({ winner, refresh }) => {
   return {
     winner,
+    refresh,
   };
 };
 

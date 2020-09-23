@@ -14,12 +14,14 @@ const setNames = (state, action) => ({
 const setWinners = (state, action) => ({
   ...state,
   winner: [...state.winner, action.winner],
+  refresh: false,
 });
 
 const pushWinners = (state) => ({
   ...state,
   dataFlow: [...state.winner],
   winner: [],
+  refresh: true,
 });
 
 const clearWinnerArray = (state) => ({

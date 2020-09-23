@@ -10,6 +10,14 @@ class MatchCard extends Component {
       selected: 0,
       roundWinner: "",
     };
+    this.handleRefresh = this.handleRefresh.bind(this);
+  }
+
+  handleRefresh() {
+    let { selected, roundWinner } = this.state;
+    return this.props.refresh
+      ? this.setState({ selected: 0, roundWinner: "" })
+      : null;
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -19,6 +27,7 @@ class MatchCard extends Component {
   }
 
   render() {
+    this.handleRefresh();
     let arr = this.props.players;
     return (
       <div
