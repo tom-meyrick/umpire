@@ -18,6 +18,12 @@ class MatchCard extends Component {
     }
   }
 
+  trackState() {
+    return !this.props.winner.length
+      ? this.setState({ winner: "", selected: 0 })
+      : null;
+  }
+
   render() {
     let arr = this.props.players;
 
