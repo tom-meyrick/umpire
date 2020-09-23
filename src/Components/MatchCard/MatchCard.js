@@ -13,25 +13,13 @@ class MatchCard extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.winner !== prevState.winner) {
-      this.props.handleWinner(this.state.winner);
-      this.trackState();
+    if (this.state.roundWinner !== prevState.roundWinner) {
+      this.props.handleWinner(this.state.roundWinner);
     }
-  }
-
-  trackState() {
-    return !this.props.winner.length
-      ? this.setState({ roundWinner: "", selected: 0 })
-      : null;
   }
 
   render() {
     let arr = this.props.players;
-
-    const checkSelected = (value) => {
-      return !this.state.selected ? value : 0;
-    };
-
     return (
       <div
         className={`${
@@ -43,17 +31,14 @@ class MatchCard extends Component {
             player={arr[0]}
             selected={this.state.selected === 1}
             handleClick={() =>
-              this.setState(
-                { selected: checkSelected(1), winner: arr[0] },
-                console.log(this.props)
-              )
+              this.setState({ selected: 1, roundWinner: arr[0] })
             }
           />
           <PlayerCard
             player={arr[1]}
             selected={this.state.selected === 2}
             handleClick={() =>
-              this.setState({ selected: checkSelected(2), winner: arr[1] })
+              this.setState({ selected: 2, roundWinner: arr[1] })
             }
           />
         </>
