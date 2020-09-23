@@ -30,6 +30,8 @@ class MatchCard extends Component {
 
   render() {
     let arr = this.props.players;
+    let key = this.props.key;
+    console.log(this.state.selected);
     return (
       <div
         className={`${
@@ -40,12 +42,14 @@ class MatchCard extends Component {
           <PlayerCard
             player={arr[0]}
             selected={this.state.selected === 1}
+            key={key}
             handleClick={() =>
               this.setState({ selected: 1, roundWinner: arr[0] })
             }
           />
           <PlayerCard
             player={arr[1]}
+            key={key}
             selected={this.state.selected === 2}
             handleClick={() =>
               this.setState({ selected: 2, roundWinner: arr[1] })
