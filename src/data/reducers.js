@@ -17,12 +17,16 @@ const setWinners = (state, action) => ({
   refresh: false,
 });
 
-const pushWinners = (state) => ({
-  ...state,
-  dataFlow: [...state.winner],
-  winner: [],
-  refresh: true,
-});
+const pushWinners = (state) => (
+  console.log(state.winner.length),
+  {
+    ...state,
+    dataFlow: [...state.winner],
+    champion: state.winner.length === 1 ? state.winner[0] : "",
+    winner: [],
+    refresh: true,
+  }
+);
 
 const clearWinnerArray = (state) => ({
   ...state,
