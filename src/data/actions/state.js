@@ -25,8 +25,14 @@ export const pushWinners = () => {
   };
 };
 
-export const clearArray = () => {
+export const clearDataArray = () => {
   return {
-    type: "CLEAR_ARRAY",
+    type: "CLEAR_DATA_ARRAY",
+  };
+};
+
+export const clearWinnerArray = () => {
+  return {
+    type: "CLEAR_WINNER_ARRAY",
   };
 };

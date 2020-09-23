@@ -13,7 +13,6 @@ class NumberInput extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.noPlayers !== prevState.noPlayers) {
-      this.props.handleClear();
     }
   }
 
@@ -38,6 +37,7 @@ class NumberInput extends Component {
     this.setState({
       noPlayers: 2,
     });
+    this.props.handleClear();
   };
 
   render() {
