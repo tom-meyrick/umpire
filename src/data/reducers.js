@@ -19,6 +19,7 @@ const setWinners = (state, action) => ({
 const pushWinners = (state) => ({
   ...state,
   dataFlow: [...state.winner],
+  winner: [],
 });
 
 const clearArray = (state) => ({

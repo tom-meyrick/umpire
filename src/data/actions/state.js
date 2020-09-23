@@ -20,7 +20,6 @@ export const setWinners = (winner) => {
 };
 
 export const pushWinners = () => {
-  console.log("Hello from actions");
   return {
     type: "PUSH_WINNERS",
   };
