@@ -9,7 +9,7 @@ const mapStateToProps = ({ winner }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  handleWinner: (winner) => dispatch(setWinners(winner)),
+  handleWinner: (roundWinner) => dispatch(setWinners(roundWinner)),
 });
 
-export default connect(null, mapDispatchToProps)(MatchCard);
+export default connect(mapStateToProps, mapDispatchToProps)(MatchCard);

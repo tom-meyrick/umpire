@@ -8,19 +8,20 @@ class MatchCard extends Component {
 
     this.state = {
       selected: 0,
-      winner: "",
+      roundWinner: "",
     };
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.winner !== prevState.winner) {
       this.props.handleWinner(this.state.winner);
+      this.trackState();
     }
   }
 
   trackState() {
     return !this.props.winner.length
-      ? this.setState({ winner: "", selected: 0 })
+      ? this.setState({ roundWinner: "", selected: 0 })
       : null;
   }
 
@@ -42,7 +43,10 @@ class MatchCard extends Component {
             player={arr[0]}
             selected={this.state.selected === 1}
             handleClick={() =>
-              this.setState({ selected: checkSelected(1), winner: arr[0] })
+              this.setState(
+                { selected: checkSelected(1), winner: arr[0] },
+                console.log(this.props)
+              )
             }
           />
           <PlayerCard

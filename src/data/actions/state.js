@@ -12,10 +12,10 @@ export const setNames = (nameArray) => {
   };
 };
 
-export const setWinners = (winner) => {
+export const setWinners = (roundWinner) => {
   return {
     type: "UPDATE_WINNERS",
-    winner,
+    winner: roundWinner,
   };
 };
 
