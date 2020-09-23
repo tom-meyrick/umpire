@@ -10,24 +10,25 @@ class MatchCard extends Component {
       selected: 0,
       roundWinner: "",
     };
-    this.handleRefresh = this.handleRefresh.bind(this);
+    // this.handleRefresh = this.handleRefresh.bind(this);
   }
 
-  handleRefresh() {
-    let { selected, roundWinner } = this.state;
-    return this.props.refresh
-      ? this.setState({ selected: 0, roundWinner: "" })
-      : null;
-  }
+  // handleRefresh() {
+  //   let { selected } = this.state;
+  //   return this.props.refresh ? { selected: 0 } : null;
+  // }
 
   componentDidUpdate(prevProps, prevState) {
+    let { selected, roundWinner } = this.state;
     if (this.state.roundWinner !== prevState.roundWinner) {
       this.props.handleWinner(this.state.roundWinner);
+    }
+    if (prevState.selected && this.props.refresh) {
+      this.setState({ selected: 0 });
     }
   }
 
   render() {
-    this.handleRefresh();
     let arr = this.props.players;
     return (
       <div
