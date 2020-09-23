@@ -3,6 +3,13 @@ import MatchCard from "../MatchCard";
 import Shuffler from "../Shuffler";
 
 class TournamentGrid extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      refresh: !this.props.refresh,
+    };
+  }
   render() {
     let randomisePlayers = Shuffler(
       this.props.dataFlow.length > 0

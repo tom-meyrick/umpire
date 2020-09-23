@@ -14,16 +14,24 @@ const setNames = (state, action) => ({
 const setWinners = (state, action) => ({
   ...state,
   winner: [...state.winner, action.winner],
+  refresh: false,
 });
 
 const pushWinners = (state) => ({
   ...state,
   dataFlow: [...state.winner],
+  winner: [],
+  refresh: true,
 });
 
-const clearArray = (state) => ({
+const clearWinnerArray = (state) => ({
   ...state,
   winner: [],
+});
+
+const clearDataArray = (state) => ({
+  ...state,
+  dataFlow: [],
 });
 
 const reducer = (state, action) => {
@@ -36,8 +44,10 @@ const reducer = (state, action) => {
       return setWinners(state, action);
     case "PUSH_WINNERS":
       return pushWinners(state);
-    case "CLEAR_ARRAY":
-      return clearArray(state);
+    case "CLEAR_WINNER_ARRAY":
+      return clearWinnerArray(state);
+    case "CLEAR_DATA_ARRAY":
+      return clearDataArray(state);
     default:
       return state;
   }

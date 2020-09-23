@@ -2,8 +2,15 @@ import { connect } from "react-redux";
 import MatchCard from "./MatchCard";
 import { setWinners } from "../../data/actions/state";
 
+const mapStateToProps = ({ winner, refresh }) => {
+  return {
+    winner,
+    refresh,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => ({
-  handleWinner: (winner) => dispatch(setWinners(winner)),
+  handleWinner: (roundWinner) => dispatch(setWinners(roundWinner)),
 });
 
-export default connect(null, mapDispatchToProps)(MatchCard);
+export default connect(mapStateToProps, mapDispatchToProps)(MatchCard);

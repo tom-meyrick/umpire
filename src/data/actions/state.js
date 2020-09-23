@@ -12,22 +12,27 @@ export const setNames = (nameArray) => {
   };
 };
 
-export const setWinners = (winner) => {
+export const setWinners = (roundWinner) => {
   return {
     type: "UPDATE_WINNERS",
-    winner,
+    winner: roundWinner,
   };
 };
 
 export const pushWinners = () => {
-  console.log("Hello from actions");
   return {
     type: "PUSH_WINNERS",
   };
 };
 
-export const clearArray = () => {
+export const clearDataArray = () => {
   return {
-    type: "CLEAR_ARRAY",
+    type: "CLEAR_DATA_ARRAY",
+  };
+};
+
+export const clearWinnerArray = () => {
+  return {
+    type: "CLEAR_WINNER_ARRAY",
   };
 };

@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import TournamentGrid from "./TournamentGrid";
 import { pushWinners } from "../../data/actions/state";
 
-const mapStateToProps = ({ playerNames, dataFlow }) => {
+const mapStateToProps = ({ playerNames, dataFlow, refresh }) => {
   return {
     playerNames,
     dataFlow,
