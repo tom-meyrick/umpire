@@ -1,19 +1,6 @@
 import React, { Component } from "react";
 
 class EndGame extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      // Initial state
-    };
-  }
-  handleEvent = () => {
-    this.setState({
-      // Update state
-    });
-  };
-
   render() {
     return (
       <div className="flex justify-center">
