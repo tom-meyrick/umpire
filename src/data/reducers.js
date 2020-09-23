@@ -24,7 +24,6 @@ const pushWinners = (state) => ({
 const clearArray = (state) => ({
   ...state,
   winner: [],
-  dataFlow: [],
 });
 
 const reducer = (state, action) => {
