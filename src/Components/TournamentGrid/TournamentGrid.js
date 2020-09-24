@@ -50,7 +50,7 @@ class TournamentGrid extends Component {
       <>
         <div className="block">
           <div className="mt-12 ml-12 flex justify-center align-center bg-yellow-300 pb-10 mb-10">
-            <h1 className="text-6xl font-mono text-white w-100">
+            <h1 className="text-2xl font-mono text-white w-100">
               {" "}
               {findSqrt(this.props.round, this.props.noPlayers)
                 ? "Final"

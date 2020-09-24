@@ -22,16 +22,14 @@ class EndGame extends Component {
     if (referrer) return <Redirect to={referrer} />;
     return (
       <>
-        <div className="inline-block flex justify-center">
-          <div className="mt-20 inline-block mb-20">
-            <div className="block">
-              <div className="mt-12 ml-12 flex justify-center align-center bg-red-400 pb-10 mb-10">
-                <h1 className="text-6xl font-mono text-white w-100">
-                  {" "}
-                  <p>Congratulations {dataFlow[0]} </p>
-                  <p>You are a ping pong champion!</p>
-                </h1>
-              </div>
+        <div className="flex justify-center">
+          <div className="mt-20 mb-20">
+            <div className="mt-12 ml-12 flex justify-center align-center bg-red-400 pb-10 mb-10">
+              <h1 className="text-2xl font-mono text-white">
+                {" "}
+                <p>Congratulations {dataFlow[0]} </p>
+                <p>You are a ping pong champion!</p>
+              </h1>
             </div>
           </div>
         </div>
