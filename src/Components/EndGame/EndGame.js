@@ -9,6 +9,7 @@ class EndGame extends Component {
       referrer: null,
     };
   }
+  //Click handler for clearing game data and returning user to homepage
   handleClick = (e) => {
     e.preventDefault();
     this.props.handleNextRound();
@@ -16,17 +17,16 @@ class EndGame extends Component {
   };
 
   render() {
-    let { handleClick } = this.props;
+    let { handleClick, dataFlow } = this.props;
     let { referrer } = this.state;
     if (referrer) return <Redirect to={referrer} />;
-
     return (
       <>
         <div className="inline-block flex justify-center">
           <div className="mt-20 inline-block mb-20">
             <p>
-              Congratulations {this.props.dataFlow[0]} - you are the tournament
-              champion
+              {/* Winner message, returns last name in dataFlow array */}
+              Congratulations {dataFlow[0]} - you are the tournament champion
             </p>
           </div>
         </div>

@@ -13,6 +13,8 @@ class NumberInput extends Component {
     this.decrement = this.decrement.bind(this);
   }
 
+  //Increment noPlayers
+
   increment() {
     this.setState({
       noPlayers:
@@ -22,11 +24,16 @@ class NumberInput extends Component {
     });
   }
 
+  //Decrement noPlayers
+
   decrement() {
     this.setState({
       noPlayers: this.state.noPlayers > 2 ? this.state.noPlayers / 2 : 2,
     });
   }
+
+  // Passes the number of players to setPlayers reducer, reset local state,
+  // clears dataFlow array and redirects to /players
 
   handleClick = (e) => {
     e.preventDefault();

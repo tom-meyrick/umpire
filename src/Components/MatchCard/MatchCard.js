@@ -12,8 +12,8 @@ class MatchCard extends Component {
     };
   }
 
+  //Reset the selected state when refresh state is triggered
   componentDidUpdate(prevProps, prevState) {
-    let { selected, roundWinner } = this.state;
     if (prevState.selected && this.props.refresh) {
       this.setState({ selected: 0 });
     }
@@ -22,16 +22,13 @@ class MatchCard extends Component {
   render() {
     let arr = this.props.players;
     let key = this.props.key;
+    let { selected } = this.state;
     return (
-      <div
-        className={`${
-          this.state.selected ? "pointer-events-none" : null
-        } mt-4 mb-4`}
-      >
+      <div className={`${selected ? "pointer-events-none" : null} mt-4 mb-4`}>
         <>
           <PlayerCard
             player={arr[0]}
-            selected={this.state.selected === 1}
+            selected={selected === 1}
             key={key}
             handleClick={() =>
               this.setState({ selected: 1, roundWinner: arr[0] }, () =>
@@ -42,7 +39,7 @@ class MatchCard extends Component {
           <PlayerCard
             player={arr[1]}
             key={key}
-            selected={this.state.selected === 2}
+            selected={selected === 2}
             handleClick={() =>
               this.setState({ selected: 2, roundWinner: arr[1] }, () =>
                 this.props.handleWinner(this.state.roundWinner)

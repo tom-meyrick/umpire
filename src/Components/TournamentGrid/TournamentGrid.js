@@ -13,15 +13,19 @@ class TournamentGrid extends Component {
     };
   }
   render() {
+    //Sets up routing on to next round
     let { referrer } = this.state;
     if (referrer) return <Redirect to={referrer} />;
 
+    //Passes dataFlow or playerNames into Shuffler function.
+    //playerNames is passed in first, dataFlow after once players have been added
     let randomisePlayers = Shuffler(
       this.props.dataFlow.length > 0
         ? this.props.dataFlow
         : this.props.playerNames
     );
 
+    //Splits players into arrays of 2
     let pairOffPlayers = randomisePlayers.reduce(function (
       result,
       value,
@@ -32,10 +36,8 @@ class TournamentGrid extends Component {
       return result;
     },
     []);
-    console.log(
-      this.props.round % this.props.noPlayers,
-      Math.sqrt(this.props.noPlayers)
-    );
+
+    //Checks whether the modulus of two passed in values is equal to the sqrt of the second value
     let findSqrt = (value1, value2) => {
       let sqrt = Math.ceil(Math.sqrt(value2));
       if (value1 === 5) {
@@ -43,6 +45,7 @@ class TournamentGrid extends Component {
       }
       return value1 % value2 === sqrt;
     };
+
     return (
       <>
         <h2 className="inline-block flex justify-center">
@@ -53,6 +56,7 @@ class TournamentGrid extends Component {
         <div className="inline-block flex justify-center">
           <div>
             <div className="ml-2 mr-2 md:grid grid-cols-2 gap-4 content-center">
+              {/* Map over pairOffPlayers array and pass two players into each MatchCard */}
               {pairOffPlayers.map((players, index) => (
                 <div key={index} className="mt-3 mb-3">
                   <MatchCard players={players} />
