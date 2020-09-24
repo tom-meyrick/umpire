@@ -22,8 +22,7 @@ const pushWinners = (state) => (
   {
     ...state,
     dataFlow: [...state.winner],
-    champion:
-      !state.winner.length && !state.dataFlow.length ? state.winner[0] : "",
+    champion: state.dataFlow.length === 1 ? state.dataFlow[0] : "",
     refresh: true,
     winner: [],
   }

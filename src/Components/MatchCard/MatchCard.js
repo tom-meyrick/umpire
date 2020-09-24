@@ -14,9 +14,6 @@ class MatchCard extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     let { selected, roundWinner } = this.state;
-    // if (this.state.roundWinner !== prevState.roundWinner.length) {
-    //   this.props.handleWinner(this.state.roundWinner);
-    // }
     if (prevState.selected && this.props.refresh) {
       this.setState({ selected: 0 });
     }
@@ -38,10 +35,8 @@ class MatchCard extends Component {
             selected={this.state.selected === 1}
             key={key}
             handleClick={() =>
-              this.setState(
-                { selected: 1, roundWinner: arr[0] },
-                () => this.props.handleWinner(this.state.roundWinner),
-                console.log(this.state.roundWinner)
+              this.setState({ selected: 1, roundWinner: arr[0] }, () =>
+                this.props.handleWinner(this.state.roundWinner)
               )
             }
           />
@@ -50,10 +45,8 @@ class MatchCard extends Component {
             key={key}
             selected={this.state.selected === 2}
             handleClick={() =>
-              this.setState(
-                { selected: 2, roundWinner: arr[1] },
-                () => this.props.handleWinner(this.state.roundWinner),
-                console.log(this.state.roundWinner)
+              this.setState({ selected: 2, roundWinner: arr[1] }, () =>
+                this.props.handleWinner(this.state.roundWinner)
               )
             }
           />
