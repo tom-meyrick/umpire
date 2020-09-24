@@ -36,3 +36,9 @@ export const clearWinnerArray = () => {
     type: "CLEAR_WINNER_ARRAY",
   };
 };
+
+export const endGame = () => {
+  return {
+    type: "END_GAME",
+  };
+};

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import EndGame from "./EndGame";
+import { endGame } from "../../data/actions/state";
 
 const mapStateToProps = ({ dataFlow }) => {
   return {
@@ -7,8 +8,8 @@ const mapStateToProps = ({ dataFlow }) => {
   };
 };
 
-// const mapDispatchToProps = (dispatch) => ({
-//   handleNextRound: () => dispatch(pushWinners()),
-// });
+const mapDispatchToProps = (dispatch) => ({
+  handleNextRound: () => dispatch(endGame()),
+});
 
-export default connect(mapStateToProps)(EndGame);
+export default connect(mapStateToProps, mapDispatchToProps)(EndGame);
