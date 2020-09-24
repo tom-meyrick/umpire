@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Hind", "Helvetica", "Arial", "sans-serif"],
+        sans: ["Helvetica", "Arial", "sans-serif"],
+        courier: ['"Courier Prime"', "monospace"],
       },
     },
   },

@@ -51,7 +51,7 @@ class NumberInput extends Component {
     if (referrer) return <Redirect to={referrer} />;
     return (
       <>
-        <div className="p-2 inline-block flex justify-center m-5">
+        <div className=" inline-block flex justify-center mt-30">
           <div className="flex-col">
             <div>
               <span className="text-6xl px-10">{noPlayers}</span>
