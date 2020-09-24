@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import EndGame from "./EndGame";
 
-const mapStateToProps = ({ champion }) => {
+const mapStateToProps = ({ dataFlow }) => {
   return {
-    champion,
+    dataFlow,
   };
 };
 
