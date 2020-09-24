@@ -32,9 +32,16 @@ class TournamentGrid extends Component {
       return result;
     },
     []);
-    console.log(this.props.round % this.props.noPlayers);
+    console.log(
+      this.props.round % this.props.noPlayers,
+      Math.sqrt(this.props.noPlayers)
+    );
     let findSqrt = (value1, value2) => {
-      return value1 % value2 === Math.sqrt(value2);
+      let sqrt = Math.ceil(Math.sqrt(value2));
+      if (value1 === 5) {
+        return true;
+      }
+      return value1 % value2 === sqrt;
     };
     return (
       <>

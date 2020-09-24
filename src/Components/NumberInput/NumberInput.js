@@ -16,7 +16,7 @@ class NumberInput extends Component {
   increment() {
     this.setState({
       noPlayers:
-        this.state.noPlayers < 64
+        this.state.noPlayers < 32
           ? this.state.noPlayers * 2
           : this.state.noPlayers,
     });
