@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 
 class NumberInput extends Component {
   constructor(props) {
@@ -6,14 +7,10 @@ class NumberInput extends Component {
 
     this.state = {
       noPlayers: 2,
+      referrer: null,
     };
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.noPlayers !== prevState.noPlayers) {
-    }
   }
 
   increment() {
@@ -38,11 +35,13 @@ class NumberInput extends Component {
       noPlayers: 2,
     });
     this.props.handleClear();
+    this.setState({ referrer: "/players" });
   };
 
   render() {
     const { handleClick, increment, decrement } = this.props;
-    const { noPlayers } = this.state;
+    const { noPlayers, referrer } = this.state;
+    if (referrer) return <Redirect to={referrer} />;
     return (
       <>
         <div className="p-2 inline-block flex justify-center m-5">

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MatchCard from "../MatchCard";
 import Shuffler from "../Shuffler";
+import { Redirect } from "react-router-dom";
 
 class TournamentGrid extends Component {
   constructor(props) {
@@ -8,9 +9,13 @@ class TournamentGrid extends Component {
 
     this.state = {
       refresh: !this.props.refresh,
+      referrer: null,
     };
   }
   render() {
+    let { referrer } = this.state;
+    if (referrer) return <Redirect to={referrer} />;
+
     let randomisePlayers = Shuffler(
       this.props.dataFlow.length > 0
         ? this.props.dataFlow
@@ -37,12 +42,21 @@ class TournamentGrid extends Component {
             </div>
           ))}
           <div className="inline-block flex justify-center">
-            <button
-              className="m-6 block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-55"
-              onClick={this.props.handleNextRound}
-            >
-              Next Round
-            </button>
+            {this.props.dataFlow.length !== 1 ? (
+              <button
+                className="m-6 block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-55"
+                onClick={this.props.handleNextRound}
+              >
+                Next Round
+              </button>
+            ) : (
+              <button
+                className="m-6 block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-55"
+                onClick={this.setState({ referrer: "/endgame" })}
+              >
+                Final
+              </button>
+            )}
           </div>
         </div>
       </div>

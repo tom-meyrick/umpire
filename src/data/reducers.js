@@ -38,6 +38,17 @@ const clearDataArray = (state) => ({
   dataFlow: [],
 });
 
+const endGame = (state) => (
+  console.log("Hi"),
+  {
+    ...state,
+    dataFlow: [],
+    winner: [],
+    playerNames: [],
+    noPlayers: 0,
+  }
+);
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "UPDATE_NO":
@@ -52,6 +63,8 @@ const reducer = (state, action) => {
       return clearWinnerArray(state);
     case "CLEAR_DATA_ARRAY":
       return clearDataArray(state);
+    case "END_GAME":
+      return endGame(state);
     default:
       return state;
   }
