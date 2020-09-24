@@ -49,7 +49,7 @@ class TournamentGrid extends Component {
     return (
       <>
         <div className="block">
-          <div className="mt-12 ml-12 flex justify-center align-center bg-yellow-300 pb-10 mb-10">
+          <div className="mt-12 flex justify-center align-center bg-red-600 pb-10 mb-10">
             <h1 className="text-2xl font-mono text-white w-100">
               {" "}
               {findSqrt(this.props.round, this.props.noPlayers)
@@ -69,21 +69,16 @@ class TournamentGrid extends Component {
               ))}
             </div>
             <div className="inline-block flex justify-center">
-              {this.props.dataFlow.length === 1 ? (
-                <button
-                  className="m-6 block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-55"
-                  onClick={this.setState({ referrer: "/endgame" })}
-                >
-                  Final
-                </button>
-              ) : (
-                <button
-                  className="m-6 block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-55"
-                  onClick={this.props.handleNextRound}
-                >
-                  Next Round
-                </button>
-              )}
+              <button
+                className="m-6 block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-55"
+                onClick={
+                  this.props.dataFlow.length === 1
+                    ? this.setState({ referrer: "/endgame" })
+                    : this.props.handleNextRound
+                }
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>
