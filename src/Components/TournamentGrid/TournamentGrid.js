@@ -32,10 +32,13 @@ class TournamentGrid extends Component {
       return result;
     },
     []);
+    let findSqrt = (value1, value2) => {
+      return value1 % value2 === Math.sqrt(value2);
+    };
     return (
       <>
         <h2 className="inline-block flex justify-center">
-          {this.props.round % this.props.noPlayers === 2
+          {findSqrt(this.props.round, this.props.noPlayers)
             ? "Final"
             : "Round " + this.props.round}
         </h2>
