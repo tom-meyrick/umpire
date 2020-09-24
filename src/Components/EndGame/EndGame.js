@@ -23,7 +23,7 @@ class EndGame extends Component {
     return (
       <>
         <div className="inline-block flex justify-center">
-          <div className="mt-20 inline-block">
+          <div className="mt-20 inline-block mb-20">
             <p>
               Congratulations {this.props.dataFlow[0]} - you are the tournament
               champion
