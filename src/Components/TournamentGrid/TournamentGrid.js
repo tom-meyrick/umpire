@@ -35,7 +35,7 @@ class TournamentGrid extends Component {
 
     return (
       <div className="inline-block flex justify-center">
-        <div className="ml-2 mr-2">
+        <div className="ml-2 mr-2 md:grid grid-cols-2 gap-4">
           {pairOffPlayers.map((players, index) => (
             <div key={index} className="mt-3 mb-3">
               <MatchCard players={players} />

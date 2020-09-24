@@ -21,20 +21,26 @@ class EndGame extends Component {
     if (referrer) return <Redirect to={referrer} />;
 
     return (
-      <div className="flex justify-center">
-        <div className="inline-block">
-          <p>
-            Congratulations {this.props.dataFlow[0]} - you are the tournament
-            champion
-          </p>
+      <>
+        <div className="inline-block flex justify-center">
+          <div className="mt-20 inline-block">
+            <p>
+              Congratulations {this.props.dataFlow[0]} - you are the tournament
+              champion
+            </p>
+          </div>
         </div>
-        <button
-          className="inline-block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-          onClick={this.handleClick}
-        >
-          Play again
-        </button>
-      </div>
+        <div className="inline-block flex justify-center">
+          <div>
+            <button
+              className="inline-block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+              onClick={this.handleClick}
+            >
+              Play again
+            </button>
+          </div>
+        </div>
+      </>
     );
   }
 }

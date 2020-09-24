@@ -23,7 +23,8 @@ const App = (noPlayers, playerNames, dataFlow, winner, refresh) => (
             <NumberInput />
           </Route>
           <Route exact path="/players">
-            {!playerNames ? <Form /> : <TournamentGrid />}
+            <Form />
+            <TournamentGrid />
           </Route>
           <Route exact path="/endgame">
             <EndGame />
