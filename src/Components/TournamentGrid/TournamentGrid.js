@@ -48,11 +48,16 @@ class TournamentGrid extends Component {
 
     return (
       <>
-        <h2 className="inline-block flex justify-center">
-          {findSqrt(this.props.round, this.props.noPlayers)
-            ? "Final"
-            : "Round " + this.props.round}
-        </h2>
+        <div className="block">
+          <div className="mt-12 ml-12 flex justify-center align-center bg-yellow-300 pb-10 mb-10">
+            <h1 className="text-6xl font-mono text-white w-100">
+              {" "}
+              {findSqrt(this.props.round, this.props.noPlayers)
+                ? "Final"
+                : "Round " + this.props.round}
+            </h1>
+          </div>
+        </div>
         <div className="inline-block flex justify-center">
           <div>
             <div className="ml-2 mr-2 md:grid grid-cols-2 gap-4 content-center">
