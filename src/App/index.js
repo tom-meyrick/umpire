@@ -7,6 +7,7 @@ const mapStateToProps = ({
   dataFlow,
   winner,
   refresh,
+  namesSubmitted,
 }) => {
   return {
     noPlayers,
@@ -14,6 +15,7 @@ const mapStateToProps = ({
     dataFlow,
     winner,
     refresh,
+    namesSubmitted,
   };
 };
 

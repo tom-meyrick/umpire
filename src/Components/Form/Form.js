@@ -35,7 +35,7 @@ class Form extends Component {
     }
     return (
       <div>
-        <form className="p-2 inline-block flex flex-col justify-center m-5">
+        <form className="p-2 inline-block flex flex-col justify-center m-5 mt-8">
           <label className="block">
             <>
               {multiples.map((input, index) => (

@@ -13,7 +13,14 @@ import {
   useHistory,
 } from "react-router-dom";
 
-const App = (noPlayers, playerNames, dataFlow, winner, refresh) => (
+const App = ({
+  noPlayers,
+  playerNames,
+  dataFlow,
+  winner,
+  refresh,
+  namesSubmitted,
+}) => (
   <>
     <div className="container mx-auto text-lg font-hind">
       <Router>
@@ -23,8 +30,7 @@ const App = (noPlayers, playerNames, dataFlow, winner, refresh) => (
             <NumberInput />
           </Route>
           <Route exact path="/players">
-            <Form />
-            <TournamentGrid />
+            {namesSubmitted ? <TournamentGrid /> : <Form />}
           </Route>
           <Route exact path="/endgame">
             <EndGame />

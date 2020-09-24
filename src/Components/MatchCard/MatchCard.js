@@ -22,7 +22,6 @@ class MatchCard extends Component {
   render() {
     let arr = this.props.players;
     let key = this.props.key;
-    console.log(this.state.selected);
     return (
       <div
         className={`${

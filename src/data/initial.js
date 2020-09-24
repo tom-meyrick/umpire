@@ -5,6 +5,8 @@ const initial = {
   winner: [],
   champion: "",
   refresh: false,
+  namesSubmitted: false,
+  round: 1,
 };
 
 export default initial;

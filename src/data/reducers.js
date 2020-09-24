@@ -9,6 +9,7 @@ const setPlayers = (state, action) => ({
 const setNames = (state, action) => ({
   ...state,
   playerNames: action.playerNames.playerNames,
+  namesSubmitted: true,
 });
 
 const setWinners = (state, action) => ({
@@ -25,6 +26,7 @@ const pushWinners = (state) => (
     champion: state.dataFlow.length === 1 ? state.dataFlow[0] : "",
     refresh: true,
     winner: [],
+    round: state.round + 1,
   }
 );
 
@@ -38,16 +40,15 @@ const clearDataArray = (state) => ({
   dataFlow: [],
 });
 
-const endGame = (state) => (
-  console.log("Hi"),
-  {
-    ...state,
-    dataFlow: [],
-    winner: [],
-    playerNames: [],
-    noPlayers: 0,
-  }
-);
+const endGame = (state) => ({
+  ...state,
+  dataFlow: [],
+  winner: [],
+  playerNames: [],
+  noPlayers: 0,
+  namesSubmitted: false,
+  round: 1,
+});
 
 const reducer = (state, action) => {
   switch (action.type) {
