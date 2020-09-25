@@ -25,8 +25,8 @@ class Form extends Component {
     e.preventDefault();
     const { playerNames } = this.state;
     if (
-      this.state.playerNames.length === this.props.noPlayers &&
-      this.state.playerNames.every((x) => x !== undefined)
+      playerNames.length === this.props.noPlayers &&
+      playerNames.every((x) => x !== undefined)
     ) {
       this.setState([...playerNames, { name: "" }]);
       this.props.handlePlayers({ ...this.state });
