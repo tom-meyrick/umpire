@@ -24,7 +24,7 @@ class EndGame extends Component {
       <>
         <div className="flex justify-center">
           <div className="mt-20 mb-20">
-            <div className="mt-12 flex justify-center align-center bg-red-400 pb-10 mb-10">
+            <div className="mt-12 flex justify-center align-center bg-red-400 pb-10 mb-10 p-10">
               <h1 className="text-2xl font-mono text-white">
                 {" "}
                 <p>Congratulations {dataFlow[0]} </p>
