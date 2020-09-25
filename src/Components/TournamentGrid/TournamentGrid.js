@@ -45,7 +45,6 @@ class TournamentGrid extends Component {
       }
       return value1 % value2 === sqrt;
     };
-    console.log(this.props.dataFlow.length);
     return (
       <>
         <div className="block">
