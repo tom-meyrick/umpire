@@ -6,12 +6,7 @@ import PlayerCard from "../Components/PlayerCard";
 import MatchCard from "../Components/MatchCard";
 import EndGame from "../Components/EndGame";
 import TournamentGrid from "../Components/TournamentGrid";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  useHistory,
-} from "react-router-dom";
+import { HashRouter, Route, Switch, useHistory } from "react-router-dom";
 
 const App = ({
   noPlayers,
@@ -23,7 +18,7 @@ const App = ({
 }) => (
   <>
     <div className="container mx-auto text-lg font-hind">
-      <Router>
+      <HashRouter basename="/">
         <Switch>
           <Route exact path="/">
             <Title />
@@ -36,7 +31,7 @@ const App = ({
             <EndGame />
           </Route>
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   </>
 );
