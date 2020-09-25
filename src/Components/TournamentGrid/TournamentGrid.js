@@ -45,7 +45,7 @@ class TournamentGrid extends Component {
       }
       return value1 % value2 === sqrt;
     };
-
+    console.log(this.props.dataFlow.length);
     return (
       <>
         <div className="block">
@@ -60,7 +60,11 @@ class TournamentGrid extends Component {
         </div>
         <div className="inline-block flex justify-center">
           <div>
-            <div className="ml-2 mr-2 md:grid grid-cols-2 gap-4 content-center">
+            <div
+              className={`ml-2 mr-2 md:grid grid-cols-${
+                this.props.dataFlow.length !== 2 ? 2 : 1
+              } gap-4 content-center`}
+            >
               {/* Map over pairOffPlayers array and pass two players into each MatchCard */}
               {pairOffPlayers.map((players, index) => (
                 <div key={index} className="mt-3 mb-3">
