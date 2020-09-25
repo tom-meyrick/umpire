@@ -4,61 +4,45 @@ Umpire is a mobile-first app designed to generate randomly paired ping pong tour
 
 # Technologies used  
 
-<ul>
-<li>React</li>
+-React
 
-<li>Redux</li>
+-Redux
 
-<li>Tailwind</li>
+-Tailwind
 
-<li>JSX</li>
+-JSX
 
-<li>HTML</li> 
+-HTML 
 
-<li>Git</li>
-</ul>
+-Git
 
 # Functionality 
 
-<ul>
-<li>Choose the number of players</li>
 
-<li>User generated input form</li>
+-Choose the number of players
 
-<li>Player validation</li>
+-User generated input form
 
-<li>Randomize players</li>
+-Player validation
 
-<li>Play through multiple brackets</li> 
+-Randomize players
 
-<li>
-Display a winner message </li>
+-Play through multiple brackets
 
-<li>Reset</li>
-</ul>
+-Display a winner message 
+
+-Reset
 
 ## How to set it up locally 
 
-<ul>
-<li>
-Create and name a local directory on your machine</li>
+- Create and name a local directory on your machine
 
-<li>
-Inside your terminal, navigate to the directory using `cd ~/your-directory`</li>
+- Inside your terminal, navigate to the directory using `cd ~/your-directory-here`
 
-<li>
-Navigate to the “code” menu and copy the GitHub CLI `gh repo clone tom-meyrick/umpire-frontend`</li>
+- Navigate to the “code” menu and copy the GitHub CLI `gh repo clone tom-meyrick/umpire-frontend`
 
-<li>Run this command on your terminal inside your local directory 
-</li>
+- Run this command on your terminal inside your local directory 
 
-<li>
-After installation is complete, run `npm install` to add dependencies </li> 
+- After installation is complete, run `npm install` to add dependencies  
 
-<li>
-Run `npm start` to view the app in your browser at `http://localhost:3000/` 
-</li>
-
-</ul>  
-
-
+- Run `npm start` to view the app in your browser at `http://localhost:3000/` 
