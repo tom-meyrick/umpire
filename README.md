@@ -44,19 +44,19 @@ Display a winner message </li>
 Create and name a local directory on your machine</li>
 
 <li>
-Inside your terminal, navigate to the directory using `cd ~/your-directory`</li>
+Inside your terminal, navigate to the directory using `<cd ~/your-directory>`</li>
 
 <li>
-Navigate to the “code” menu and copy the GitHub CLI ` gh repo clone tom-meyrick/umpire-frontend`</li>
+Navigate to the “code” menu and copy the GitHub CLI `<gh repo clone tom-meyrick/umpire-frontend>`</li>
 
 <li>Run this command on your terminal inside your local directory 
 </li>
 
 <li>
-After installation is complete, run `npm install` to add dependencies </li> 
+After installation is complete, run `<npm install>` to add dependencies </li> 
 
 <li>
-Run `npm start` to view the app in your browser at `http://localhost:3000/` 
+Run `npm start` to view the app in your browser at `<http://localhost:3000/>` 
 </li>
 
 </ul>  
