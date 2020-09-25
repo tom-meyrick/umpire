@@ -4,34 +4,34 @@ Umpire is a mobile-first app designed to generate randomly paired ping pong tour
 
 # Technologies used  
 
--React
+- React
 
--Redux
+- Redux
 
--Tailwind
+- Tailwind
 
--JSX
+- JSX
 
--HTML 
+- HTML 
 
--Git
+- Git
 
 # Functionality 
 
 
--Choose the number of players
+- Choose the number of players
 
--User generated input form
+- User generated input form
 
--Player validation
+- Player validation
 
--Randomize players
+- Randomize players
 
--Play through multiple brackets
+- Play through multiple brackets
 
--Display a winner message 
+- Display a winner message 
 
--Reset
+- Reset
 
 ## How to set it up locally 
 
