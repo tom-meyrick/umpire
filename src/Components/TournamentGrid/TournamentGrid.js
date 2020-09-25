@@ -49,7 +49,7 @@ class TournamentGrid extends Component {
     return (
       <>
         <div className="block">
-          <div className="mt-12 flex justify-center align-center bg-red-600 pb-10 mb-10">
+          <div className="mt-12 flex justify-center align-center bg-red-300 pb-10 mb-10">
             <h1 className="text-2xl font-mono text-white w-100">
               {" "}
               {findSqrt(this.props.round, this.props.noPlayers)
