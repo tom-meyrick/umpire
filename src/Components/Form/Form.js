@@ -6,6 +6,7 @@ class Form extends Component {
 
     this.state = {
       playerNames: [],
+      nameError: false,
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -20,13 +21,19 @@ class Form extends Component {
     });
   };
   //Passes playerNames to the setNames reducer
-  handleClick = () => {
+  handleClick = (e) => {
+    e.preventDefault();
     const { playerNames } = this.state;
-    this.setState([...playerNames, { name: "" }]);
-    this.props.handlePlayers({ ...this.state });
+    if (!this.state.playerNames.includes(undefined)) {
+      this.setState([...playerNames, { name: "" }]);
+      this.props.handlePlayers({ ...this.state });
+    } else {
+      return this.setState({ nameError: true });
+    }
   };
 
   render() {
+    console.log(this.state.playerNames.includes(undefined));
     const { playerNames } = this.state;
     const { noPlayers, handleClick } = this.props;
     //Uses noPlayers to push x number of divs to multiples array
@@ -62,6 +69,11 @@ class Form extends Component {
                     onChange={(e) => this.handleInputChange(e, index)}
                   />
                 ))}
+                <div className="text-red-500 text-xs">
+                  {this.state.nameError
+                    ? "Please enter names for all players"
+                    : null}
+                </div>
               </>
             </label>
             <div className="flex justify-center mt-20">
