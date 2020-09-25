@@ -24,7 +24,7 @@ class Form extends Component {
   handleClick = (e) => {
     e.preventDefault();
     const { playerNames } = this.state;
-    if (!this.state.playerNames.includes(undefined)) {
+    if (this.state.playerNames.every((x) => x)) {
       this.setState([...playerNames, { name: "" }]);
       this.props.handlePlayers({ ...this.state });
     } else {
@@ -33,7 +33,7 @@ class Form extends Component {
   };
 
   render() {
-    console.log(this.state.playerNames.includes(undefined));
+    console.log(this.state.playerNames);
     const { playerNames } = this.state;
     const { noPlayers, handleClick } = this.props;
     //Uses noPlayers to push x number of divs to multiples array
