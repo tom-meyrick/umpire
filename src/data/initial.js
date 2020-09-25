@@ -3,7 +3,6 @@ const initial = {
   playerNames: [],
   dataFlow: [],
   winner: [],
-  champion: "",
   refresh: false,
   namesSubmitted: false,
   round: 1,
