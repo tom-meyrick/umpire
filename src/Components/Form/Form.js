@@ -33,6 +33,7 @@ class Form extends Component {
   };
 
   render() {
+    console.log(this.state.playerNames.includes(undefined));
     const { playerNames } = this.state;
     const { noPlayers, handleClick } = this.props;
     //Uses noPlayers to push x number of divs to multiples array
