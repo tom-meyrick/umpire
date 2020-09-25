@@ -21,7 +21,6 @@ const setWinners = (state, action) => ({
 const pushWinners = (state) => ({
   ...state,
   dataFlow: [...state.winner],
-  champion: state.dataFlow.length === 1 ? state.dataFlow[0] : "",
   refresh: true,
   winner: [],
   round: state.round + 1,
