@@ -24,7 +24,7 @@ class Form extends Component {
   handleClick = (e) => {
     e.preventDefault();
     const { playerNames } = this.state;
-    if (this.state.playerNames.every((x) => x)) {
+    if (this.state.playerNames.every((x) => x !== undefined)) {
       this.setState([...playerNames, { name: "" }]);
       this.props.handlePlayers({ ...this.state });
     } else {
