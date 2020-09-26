@@ -12,7 +12,7 @@ class Form extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  //Creates a new array and adds player names before inserting into playerNames
+  //Creates a new array and adds players. The result is added to playerNames
   handleInputChange = (e, index) => {
     const updatedArray = [...this.state.playerNames];
     updatedArray[index] = e.target.value;
@@ -20,11 +20,10 @@ class Form extends Component {
       playerNames: updatedArray,
     });
   };
-  //Passes playerNames to the setNames reducer
+  //Validates playerNames and passes to the setNames reducer
   handleClick = (e) => {
     e.preventDefault();
     const { playerNames } = this.state;
-    console.log(playerNames);
     if (
       playerNames.length !== this.props.noPlayers ||
       playerNames.includes(undefined)
