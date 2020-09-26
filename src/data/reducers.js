@@ -25,7 +25,6 @@ const pushWinners = (state) => ({
   winner: [],
   round: state.round + 1,
 });
-
 const clearWinnerArray = (state) => ({
   ...state,
   winner: [],
@@ -44,6 +43,7 @@ const endGame = (state) => ({
   noPlayers: 0,
   namesSubmitted: false,
   round: 1,
+  bracketCompleted: false,
 });
 
 const reducer = (state, action) => {
