@@ -39,10 +39,10 @@ Umpire is a mobile-first app designed to generate randomly paired ping pong tour
 
 - Inside your terminal, navigate to the directory using `cd ~/your-directory-here`
 
-- Navigate to the “code” menu and copy the GitHub CLI `gh repo clone tom-meyrick/umpire-frontend`
+- Copy this HTTPS link: `https://github.com/tom-meyrick/umpire.git`
 
-- Run this command on your terminal inside your local directory 
+- Run `git clone https://github.com/tom-meyrick/umpire.git` on your terminal inside your local directory 
 
-- After installation is complete, run `npm install` to add dependencies  
+- After installation is complete, `cd` into the `umpire` folder and run `npm install` to add dependencies  
 
 - Run `npm start` to view the app in your browser at `http://localhost:3000/` 
