@@ -9,7 +9,7 @@ class EndGame extends Component {
       referrer: null,
     };
   }
-  //Click handler for clearing game data and returning user to homepage
+  //Click handler for clearing game data and setting refferer to homepage
   handleClick = (e) => {
     e.preventDefault();
     this.props.handleNextRound();
@@ -19,6 +19,7 @@ class EndGame extends Component {
   render() {
     let { dataFlow } = this.props;
     let { referrer } = this.state;
+    // If referrer is truthy, redirect to homepage
     if (referrer) return <Redirect to={referrer} />;
     return (
       <>
@@ -27,7 +28,7 @@ class EndGame extends Component {
             <div className="mt-12 flex justify-center align-center bg-red-400 pb-10 mb-10 p-10 shadow-xl focus:shadow-outline">
               <h1 className="text-2xl font-mono text-white">
                 {" "}
-                <p>Congratulations {dataFlow[0]} </p>
+                <p>Congratulations {dataFlow[0]} -</p>
                 <p>You are a ping pong champion!</p>
               </h1>
             </div>

@@ -18,14 +18,15 @@ class TournamentGrid extends Component {
     if (referrer) return <Redirect to={referrer} />;
 
     //Passes dataFlow or playerNames into Shuffler function.
-    //playerNames is passed in first, dataFlow after once players have been added
+    //playerNames is passed in first.
+    // dataFlow is empty until the first round is over, so is only used once players have been added
     let randomisePlayers = Shuffler(
       this.props.dataFlow.length > 0
         ? this.props.dataFlow
         : this.props.playerNames
     );
 
-    //Splits players into arrays of 2
+    // Players are randomised and split into a series of arrays of 2. This function is called on randomisePlayers each round
     let pairOffPlayers = randomisePlayers.reduce(function (
       result,
       value,
@@ -37,7 +38,7 @@ class TournamentGrid extends Component {
     },
     []);
 
-    //Checks whether the modulus of two passed in values is equal to the sqrt of the second value
+    //This functions takes the round and the number of players and returns either "final" or the round number - refactor this as it's quite confusing
     let findSqrt = (round, noPlayers) => {
       let sqrt = Math.ceil(Math.sqrt(noPlayers));
       if (round === 5 || noPlayers === 2) {
@@ -61,6 +62,7 @@ class TournamentGrid extends Component {
         <div className="inline-block flex justify-center">
           <div>
             <div
+              // Change the column structure based on the number of matchcards displayed
               className={`ml-2 mr-2 md:grid grid-cols-${
                 this.props.dataFlow.length === 2 || this.props.noPlayers === 2
                   ? 1
@@ -77,6 +79,7 @@ class TournamentGrid extends Component {
             <div className="inline-block flex justify-center">
               <button
                 className="m-6 block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-55"
+                //Either redirect to "endgame" or click through to a new round
                 onClick={
                   this.props.dataFlow.length === 1
                     ? this.setState({ referrer: "/endgame" })

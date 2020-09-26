@@ -13,7 +13,7 @@ class NumberInput extends Component {
     this.decrement = this.decrement.bind(this);
   }
 
-  //Increment noPlayers
+  //Increment noPlayers - 32 is an arbitrary figure, can be scaled up indefinitely (you might get tired of typing though)
 
   increment() {
     this.setState({
@@ -24,7 +24,7 @@ class NumberInput extends Component {
     });
   }
 
-  //Decrement noPlayers
+  //Decrement noPlayers - 2 is set as the lowest value
 
   decrement() {
     this.setState({
@@ -34,7 +34,6 @@ class NumberInput extends Component {
 
   // Passes the number of players to setPlayers reducer, reset local state,
   // clears dataFlow array and redirects to /players
-
   handleClick = (e) => {
     e.preventDefault();
     this.props.handleSubmit({ ...this.state });
@@ -56,12 +55,14 @@ class NumberInput extends Component {
               <span className="text-6xl px-10">{noPlayers}</span>
             </div>
             <div className="pt-8 pb-8">
+              {/* Decrement button */}
               <button
                 className="h-10 w-10 text-2xl m-4"
                 onClick={this.decrement}
               >
                 -
               </button>
+              {/* Increment button */}
               <button
                 className="h-10 w-10 text-2xl m-4"
                 onClick={this.increment}
@@ -69,7 +70,7 @@ class NumberInput extends Component {
                 +
               </button>
             </div>
-
+            {/* Submit button and handler */}
             <button
               className="m-6 block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-55"
               onClick={this.handleClick}

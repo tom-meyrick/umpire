@@ -12,9 +12,10 @@ class Form extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  //Creates a new array and adds players. The result is added to playerNames
+  //Creates a new array, including playerNames stored in state, and adds players. The result is assigned to playerNames
   handleInputChange = (e, index) => {
     const updatedArray = [...this.state.playerNames];
+    // Set the current target value to the assigned index
     updatedArray[index] = e.target.value;
     this.setState({
       playerNames: updatedArray,
@@ -37,10 +38,10 @@ class Form extends Component {
 
   render() {
     const { noPlayers } = this.props;
-    //Uses noPlayers to push x number of divs to multiples array
+    //Uses noPlayers to push x number of spans to multiples array
     let multiples = [];
     for (var i = 0; i < noPlayers; i++) {
-      multiples.push(<div></div>);
+      multiples.push(<span></span>);
     }
 
     return (
@@ -71,6 +72,7 @@ class Form extends Component {
                   />
                 ))}
                 <div className="text-red-500 text-xs">
+                  {/* Error message for form validation */}
                   {this.state.nameError
                     ? "Please enter names for all players"
                     : null}
@@ -78,6 +80,7 @@ class Form extends Component {
               </>
             </label>
             <div className="flex justify-center mt-20">
+              {/* Submit button */}
               <button
                 className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded inline-block w-55 "
                 onClick={this.handleClick}
