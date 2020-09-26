@@ -38,13 +38,14 @@ class TournamentGrid extends Component {
     []);
 
     //Checks whether the modulus of two passed in values is equal to the sqrt of the second value
-    let findSqrt = (value1, value2) => {
-      let sqrt = Math.ceil(Math.sqrt(value2));
-      if (value1 === 5) {
+    let findSqrt = (round, noPlayers) => {
+      let sqrt = Math.ceil(Math.sqrt(noPlayers));
+      if (round === 5 || noPlayers === 2) {
         return true;
       }
-      return value1 % value2 === sqrt;
+      return round % noPlayers === sqrt;
     };
+
     return (
       <>
         <div className="block">
@@ -61,7 +62,9 @@ class TournamentGrid extends Component {
           <div>
             <div
               className={`ml-2 mr-2 md:grid grid-cols-${
-                this.props.dataFlow.length !== 2 ? 2 : 1
+                this.props.dataFlow.length === 2 || this.props.noPlayers === 2
+                  ? 1
+                  : 2
               } gap-4 content-center`}
             >
               {/* Map over pairOffPlayers array and pass two players into each MatchCard */}
