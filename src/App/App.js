@@ -7,7 +7,7 @@ import MatchCard from "../Components/MatchCard";
 import EndGame from "../Components/EndGame";
 import TournamentGrid from "../Components/TournamentGrid";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   useHistory,
