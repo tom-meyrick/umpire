@@ -1,6 +1,3 @@
-import { handleToggleID } from "./actions/state";
-import initial from "./initial";
-
 const setPlayers = (state, action) => ({
   ...state,
   noPlayers: action.noPlayers.noPlayers,

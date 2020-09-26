@@ -17,7 +17,7 @@ class EndGame extends Component {
   };
 
   render() {
-    let { handleClick, dataFlow } = this.props;
+    let { dataFlow } = this.props;
     let { referrer } = this.state;
     if (referrer) return <Redirect to={referrer} />;
     return (

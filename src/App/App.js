@@ -2,16 +2,9 @@ import React from "react";
 import Title from "../Components/Title";
 import NumberInput from "../Components/NumberInput";
 import Form from "../Components/Form";
-import PlayerCard from "../Components/PlayerCard";
-import MatchCard from "../Components/MatchCard";
 import EndGame from "../Components/EndGame";
 import TournamentGrid from "../Components/TournamentGrid";
-import {
-  HashRouter as Router,
-  Route,
-  Switch,
-  useHistory,
-} from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = ({
   noPlayers,

@@ -1,5 +1,3 @@
-import react from "react";
-
 function Shuffler(array) {
   let currentIndex = array.length,
     temporaryValue,

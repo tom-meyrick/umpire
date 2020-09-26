@@ -46,7 +46,6 @@ class NumberInput extends Component {
   };
 
   render() {
-    const { handleClick, increment, decrement } = this.props;
     const { noPlayers, referrer } = this.state;
     if (referrer) return <Redirect to={referrer} />;
     return (

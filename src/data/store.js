@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, compose } from "redux";
 import initial from "./initial";
 import reducer from "./reducers";
 import persistState from "redux-localstorage";

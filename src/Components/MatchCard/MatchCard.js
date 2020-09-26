@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PlayerCard from "../PlayerCard";
-import Shuffler from "../Shuffler";
 
 class MatchCard extends Component {
   constructor(props) {
