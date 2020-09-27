@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3c35ba0ff1b5caba1a68636fa9b0f33f",
+    "revision": "5cf72b590af24c775a2f423f3b957975",
     "url": "/umpire/index.html"
   },
   {
-    "revision": "a8431e2c6cd1ec3665dc",
+    "revision": "fa4cffeca71331814b7b",
     "url": "/umpire/static/css/main.819ad5d7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/umpire/static/js/2.4b38e4b4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a8431e2c6cd1ec3665dc",
-    "url": "/umpire/static/js/main.5dafd786.chunk.js"
+    "revision": "fa4cffeca71331814b7b",
+    "url": "/umpire/static/js/main.052356e0.chunk.js"
   },
   {
     "revision": "a9b822d88b3ac0fb6a53",
