@@ -79,6 +79,7 @@ class TournamentGrid extends Component {
             <div className="inline-block flex justify-center">
               <button
                 className={`m-6 block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-55 ${
+                  // Checks if the winner is equal to playerNames or dataFlow /2 and returns pointer-events-none if not
                   (this.props.winner.length > 0 &&
                     this.props.winner.length ===
                       this.props.playerNames.length / 2) ||
