@@ -38,8 +38,8 @@ class TournamentGrid extends Component {
     },
     []);
 
-    //This functions takes the round and the number of players and returns either "final" or the round number - refactor this as it's quite confusing
-    let findSqrt = (round, noPlayers) => {
+    //This functions takes the round and the number of players and returns either "final" or the round number
+    let checkFinalRound = (round, noPlayers) => {
       let sqrt = Math.ceil(Math.sqrt(noPlayers));
       if (round === 5 || noPlayers === 2) {
         return true;
@@ -53,7 +53,7 @@ class TournamentGrid extends Component {
           <div className="mt-12 flex justify-center align-center bg-red-300 pb-10 mb-10">
             <h1 className="text-2xl font-mono text-white w-100">
               {" "}
-              {findSqrt(this.props.round, this.props.noPlayers)
+              {checkFinalRound(this.props.round, this.props.noPlayers)
                 ? "Final"
                 : "Round " + this.props.round}
             </h1>
