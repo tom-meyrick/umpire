@@ -1,6 +1,6 @@
 ## Umpire
 
-Umpire is a mobile-first app designed to generate randomly paired ping pong tournaments from a list of players passed in by the user. The UI is simply designed for ease of use on mobile in the kind of environments where ping pong tables are commonly found (student common rooms, bars and parks for example).  
+Umpire is a mobile-first app designed to generate randomly paired ping pong tournaments from a list of players passed in by the user. The UI is designed for ease of use on mobile in the kind of environments where ping pong tables are commonly found (student common rooms, bars and parks for example).  
 
 You can view a live version of the app here: https://tom-meyrick.github.io/umpire/#/
 
